@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonenkey/actions-php-audit@master
+      - uses: glassmonenkey/actions-php-audit@v0.1
         id: checker # id is required if called from other steps
         with:
           WORK_DIR: /path/to/dir # Relative path of the directory where composer.lock exists
