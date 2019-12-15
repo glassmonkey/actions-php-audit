@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: glassmonenkey/actions-php-audit
+    entrypoint: /bin/bash
+    environment:
+      WORK_DIR: /app
+    volumes:
+      - ./composer.lock:/app/composer.lock
