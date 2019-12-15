@@ -22,3 +22,6 @@ jobs:
       - name: sample message
         run: echo "${{ steps.checker.outputs.message }}"
 ```
+
+## License
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
