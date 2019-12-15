@@ -4,7 +4,6 @@ services:
   app:
     build: .
     image: glassmonenkey/actions-php-audit
-    entrypoint: /bin/bash
     environment:
       WORK_DIR: /app
     volumes:
