@@ -14,6 +14,6 @@ RUN wget https://github.com/sensiolabs/security-checker/archive/v${VERSION}.zip 
     mv security-checker-${VERSION} /opt/security-checker
 WORKDIR /opt/security-checker
 RUN composer install
-ARG WORK_DIR=/
+ARG WORK_DIR=""
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]

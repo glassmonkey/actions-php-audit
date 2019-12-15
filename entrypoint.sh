@@ -7,4 +7,4 @@ fi
 PHP_AUDIT_MESSAG=$(php /opt/security-checker/security-checker security:check composer.lock)
 STATUS=$?
 echo ::set-output name=message::${PHP_AUDIT_MESSAG}
-exit $STATUS
+#exit $STATUS
