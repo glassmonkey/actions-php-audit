@@ -29,3 +29,6 @@ You can run with A sample `composer.lock`
 ```bash
 docker-composer run app
 ```
+
+## License
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
