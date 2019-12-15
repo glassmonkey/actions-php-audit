@@ -1,0 +1,19 @@
+name: 'PHP AUDIT ACTION'
+description: 'GitHub Actions for PHP LIbrary Secrity Checker'
+author: 'glassmonkey'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    WORK_DIR: ${{ inputs.WORK_DIR }}
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
+inputs:
+  WORK_DIR:
+    description: Relative path of the directory where composer.lock exists
+    required: false
+    default: ""
+outputs:
+  message:
+    description: "Using your library have security infomation"
