@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonenkey/actions-php-audit@v0.1
+      - uses: glassmonenkey/actions-php-audit@0.1
         name: checker
         id: checker
       - name: sample message
