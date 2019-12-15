@@ -16,4 +16,4 @@ inputs:
     default: ""
 outputs:
   message:
-    description: "Using your library have security infomation"
+    description: "Using your library have security information"
