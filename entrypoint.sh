@@ -14,13 +14,13 @@ fi
 # referer to https://github.com/jessfraz/shaking-finger-action/blob/master/add-comment.sh
 set -e
 
-if [[ -z "$GITHUB_TOKEN" ]]; then
+if [ -z "$GITHUB_TOKEN" ]; then
 	echo "Set the GITHUB_TOKEN env variable."
 	exit 1
 fi
 
 
-if [[ -z "$GITHUB_REPOSITORY" ]]; then
+if [ -z "$GITHUB_REPOSITORY" ]; then
 	echo "Set the GITHUB_REPOSITORY env variable."
 	exit 1
 fi
