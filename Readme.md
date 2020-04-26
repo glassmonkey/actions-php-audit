@@ -1,5 +1,7 @@
 #  Github Action for PHP Audit
-Using [security-checker](https://github.com/sensiolabs/security-checker) on Github Actions
+Using [security-checker](https://github.com/sensiolabs/security-checker) on Github Actions  
+This Action report `PHP Security infomation` as a issue.   
+e.g. https://github.com/glassmonkey/actions-php-audit/issues/4
 
 ## Usage
 
@@ -15,13 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonkey/actions-php-audit@v0.1.1
-        id: checker # id is required if called from other steps
+      - uses: glassmonkey/actions-php-audit@v1
         with:
           WORK_DIR: path/to/dir # Relative path of the directory where composer.lock exists
-      # Todo other actions
-      - name: sample message
-        run: echo "${{ steps.checker.outputs.message }}"
+          ISSUE_LABELS: bugs # Apply labels to a issue. 
 ```
 
 ## Locally Run
