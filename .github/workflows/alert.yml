@@ -12,5 +12,7 @@ jobs:
       - uses: glassmonkey/actions-php-audit@add-github-issue
         name: checker
         id: checker
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       #- name: sample message
       #  run: echo "${{ steps.checker.outputs.message }}"
