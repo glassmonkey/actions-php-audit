@@ -1,15 +1,16 @@
 name: Alert Composer Audit
 on:
-  push:
-    branches:
-      - master
+  #push:
+  #  branches:
+  #    - master
+  pull_request:
 jobs:
   check-validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonkey/actions-php-audit@v0.1.1
+      - uses: glassmonkey/actions-php-audit@add-github-issue
         name: checker
         id: checker
-      - name: sample message
-        run: echo "${{ steps.checker.outputs.message }}"
+      #- name: sample message
+      #  run: echo "${{ steps.checker.outputs.message }}"
