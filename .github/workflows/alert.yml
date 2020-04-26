@@ -2,6 +2,9 @@ name: Alert Composer Audit
 on:
   schedule:
     - cron: 0 16 * * 0 # At 01:00 on Monday. (JST)
+  push:
+    branches:
+      - master
 jobs:
   check-validate:
     runs-on: ubuntu-latest
@@ -12,4 +15,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
-          ISSUE_LABELS: bugs
+          ISSUE_LABELS: bugs,scheduled
