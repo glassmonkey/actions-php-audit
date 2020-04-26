@@ -1,4 +1,4 @@
-FROM php:7.1
+FROM php:7.3
 ENV VERSION=6.0.3
 RUN apt-get update && \
     apt-get install -y git zip wget && \
