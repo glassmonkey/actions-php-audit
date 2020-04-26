@@ -1,19 +1,16 @@
 name: Alert Composer Audit
 on:
-  #push:
-  #  branches:
-  #    - master
-  pull_request:
+  push:
+    branches:
+      - master
 jobs:
   check-validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonkey/actions-php-audit@add-github-issue
+      - uses: glassmonkey/actions-php-audit
         name: php-audit
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           ISSUE_LABELS: bugs
-      #- name: sample message
-      #  run: echo "${{ steps.checker.outputs.message }}"
