@@ -1,7 +1,7 @@
 name: Alert Composer Audit
 on:
   schedule:
-    - cron: 0 16 * * 0 # At 00:00 on Sunday.
+    - cron: 0 16 * * 0 # At 01:00 on Monday. (JST)
 jobs:
   check-validate:
     runs-on: ubuntu-latest
