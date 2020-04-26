@@ -9,9 +9,8 @@ e.g. https://github.com/glassmonkey/actions-php-audit/issues/4
 ```yaml
 name: Alert Composer Audit
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron: 0 0 * * 0 # At 00:00 on Sunday.
 jobs:
   check-validate:
     runs-on: ubuntu-latest

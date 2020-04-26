@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonkey/actions-php-audit
+      - uses: glassmonkey/actions-php-audit@v1
         name: php-audit
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
