@@ -13,7 +13,6 @@ fi
 #!/bin/bash
 # referer to https://github.com/jessfraz/shaking-finger-action/blob/master/add-comment.sh
 set -e
-set -o pipefail
 
 if [[ -z "$GITHUB_TOKEN" ]]; then
 	echo "Set the GITHUB_TOKEN env variable."
