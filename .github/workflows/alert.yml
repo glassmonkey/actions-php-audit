@@ -10,9 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: glassmonkey/actions-php-audit@add-github-issue
-        name: checker
-        id: checker
+        name: php-audit
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          ISSUE_LABELS: bugs
       #- name: sample message
       #  run: echo "${{ steps.checker.outputs.message }}"

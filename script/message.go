@@ -35,6 +35,6 @@ func selectMessageBody(message string) (string, error) {
 	if start == -1 {
 		return "", errors.New("エラー情報がありません。")
 	}
-	result := strings.Replace(message[start:], "[CVE", "\\n- [ ] [CVE", -1)
+	result := strings.Replace(strings.Replace(message[start:], "\n", "", -1), "[CVE", "\\n- [ ] [CVE", -1)
 	return result, nil
 }

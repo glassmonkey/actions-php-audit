@@ -22,8 +22,8 @@ API_HEADER="Accept: application/vnd.github.${API_VERSION}+json; application/vnd.
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 TITLE="PHP Security Report(`date "+%Y/%m/%d"`)"
 
-PHP_AUDIT_MESSAG=$(php /opt/security-checker/security-checker security:check composer.lock)
-PAYLOAD=`/opt/message "${PHP_AUDIT_MESSAG}"`
+PHP_AUDIT_MESSAG=$(php /opt/security-checker/security-checker security:check composer.lock --format=simple)
+PAYLOAD="`/opt/message "${PHP_AUDIT_MESSAG}"`"
 
 # exits error
 if [ $? != 0 ]; then
@@ -40,4 +40,6 @@ do
 done
 LABEL_ARRAY="${LABEL_ARRAY%,}]"
 
-curl -sSL -H "${AUTH_HEADER}" -H "${API_HEADER}" -d '{"title":"'"${TITLE}"'","body":"'"${PAYLOAD}"'","labels":'${LABEL_ARRAY}'}' -H "Content-Type: application/json" -X POST "${URI}/repos/${GITHUB_REPOSITORY}/issues"
+JSON='{"title":"'"${TITLE}"'","body":"'"${PAYLOAD}"'","labels":'${LABEL_ARRAY}'}'
+
+curl -sSL -H "${AUTH_HEADER}" -H "${API_HEADER}" -d "${JSON}" -H "Content-Type: application/json" -X POST "${URI}/repos/${GITHUB_REPOSITORY}/issues"
