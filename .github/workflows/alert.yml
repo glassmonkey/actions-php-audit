@@ -8,8 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: glassmonkey/actions-php-audit@v0.1.1
-        name: checker
-        id: checker
-      - name: sample message
-        run: echo "${{ steps.checker.outputs.message }}"
+      - uses: glassmonkey/actions-php-audit
+        name: php-audit
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          ISSUE_LABELS: bugs

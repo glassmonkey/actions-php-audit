@@ -1,4 +1,10 @@
-FROM php:7.1
+FROM golang:1.14 as build
+
+WORKDIR /go/src/app
+COPY script .
+RUN go build -o message
+
+FROM php:7.3 as run
 ENV VERSION=6.0.3
 RUN apt-get update && \
     apt-get install -y git zip wget && \
@@ -16,4 +22,5 @@ WORKDIR /opt/security-checker
 RUN composer install
 ARG WORK_DIR=""
 COPY entrypoint.sh /entrypoint.sh
+COPY --from=build /go/src/app/message /opt
 ENTRYPOINT ["/entrypoint.sh"]

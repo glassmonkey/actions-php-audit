@@ -1,0 +1,10 @@
+name: Alert Composer Audit
+on:
+  pull_request:
+jobs:
+  run-script-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: run test
+        run: docker-compose run script go test
