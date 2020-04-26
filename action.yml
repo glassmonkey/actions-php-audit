@@ -6,6 +6,7 @@ runs:
   image: 'Dockerfile'
   env:
     WORK_DIR: ${{ inputs.WORK_DIR }}
+    ISSUE_LABELS: ${{ inputs.ISSUE_LABELS }}
 branding:
   icon: 'upload-cloud'
   color: 'blue'
@@ -14,6 +15,7 @@ inputs:
     description: Relative path of the directory where composer.lock exists
     required: false
     default: ""
-outputs:
-  message:
-    description: "Using your library have security information"
+  ISSUE_LABELS:
+    description: Apply labels to a issue. e.g bugs,invalid
+    required: false
+    default: ""
