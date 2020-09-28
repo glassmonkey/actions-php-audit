@@ -20,6 +20,8 @@ jobs:
         with:
           WORK_DIR: path/to/dir # Relative path of the directory where composer.lock exists
           ISSUE_LABELS: bugs # Apply labels to a issue. 
+         env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 ```
 
 ## Locally Run
