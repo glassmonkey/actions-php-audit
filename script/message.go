@@ -16,7 +16,7 @@ func main() {
 	result := formatGithubMessage(message)
 	if result == "" {
 		fmt.Println("セキュリティに関する問題はありません。")
-		os.Exit(1)
+		os.Exit(0)
 	}
 	fmt.Print(formatGithubMessage(message))
 }
